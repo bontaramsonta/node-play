@@ -2,26 +2,10 @@ import "dotenv/config";
 import z from "zod";
 
 const envSchema = z.object({
-  PORT: z.string(),
-  NODE_ENV: z.enum(["development", "production", "test"]).default("production"),
-
-  // External resource URIs
-  POSTGRESQL_URL: z.string().url().optional(),
-  REDIS_URL: z.string().url().optional(),
-
-  // Secrets
-  API_KEY: z
-    .string()
-    .regex(/^[\da-f]{64}$/i)
-    .optional(),
-
-  // Booleans
-  DEBUG: z
-    .string()
-    .transform((value) =>
-      ["true", "yes", "1", "on"].includes(value.toLowerCase())
-    )
-    .default("false"),
+  RABBIT_URL: z.string(),
+  NODE_ENV: z
+    .enum(["development", "production", "test"])
+    .default("development"),
 });
 
 // validate the environment variables
@@ -40,6 +24,7 @@ if (!parsed.success) {
 }
 // print the environment variables if in development
 if (parsed.data.NODE_ENV === "development") {
+  console.log("Environment variables (only printed in development):");
   console.log(parsed.data);
 }
 export const env = Object.freeze(parsed.data);
