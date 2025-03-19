@@ -1,42 +1,27 @@
 {
-  "name": "node-play",
+  "name": "play",
   "version": "1.0.0",
-  "description": "playground for nodejs",
-  "author": "bontaramsonta",
-  "license": "ISC",
-  "main": "dist/main.js",
+  "type": "module",
+  "main": "src/main.ts",
   "scripts": {
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/main.ts",
-    "start": "ts-node src/main.ts",
-    "recieve": "ts-node src/recieve.ts",
-    "send": "ts-node src/send.ts",
-    "build": "tsc",
-    "preview": "node dist/main.js"
+    "start": "node --watch src/main.ts"
   },
-  "nodemonConfig": {
-    "events": {
-      "start": "clear"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bontaramsonta/node-play.git"
   },
-  "packageManager": "pnpm@8.8.0",
-  "engineStrict": true,
-  "engines": {
-    "node": ">=20.0.0",
-    "pnpm": ">=8.0.0",
-    "npm": "please-use-pnpm",
-    "yarn": "please-use-pnpm"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bontaramsonta/node-play/issues"
+  },
+  "homepage": "https://github.com/bontaramsonta/node-play#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.10"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.4.0",
-    "amqplib": "^0.10.3",
-    "dotenv": "^16.3.1",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@types/amqplib": "^0.10.4",
-    "@types/node": "^20.11.1",
-    "nodemon": "^3.0.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "puppeteer-core": "^24.4.0"
   }
 }
