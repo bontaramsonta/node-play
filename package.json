@@ -2,26 +2,13 @@
   "name": "play",
   "version": "1.0.0",
   "type": "module",
-  "main": "src/main.ts",
   "scripts": {
-    "start": "node --watch src/main.ts"
+    "start": "node --watch --env-file=.env src/main.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bontaramsonta/node-play.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bontaramsonta/node-play/issues"
-  },
-  "homepage": "https://github.com/bontaramsonta/node-play#readme",
-  "description": "",
   "devDependencies": {
     "@types/node": "^22.13.10"
   },
   "dependencies": {
-    "puppeteer-core": "^24.4.0"
+    "zod": "^4.0.0-beta.20250414T061543"
   }
 }
