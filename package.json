@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node --watch --env-file=.env src/main.ts"
+    "start": "node --no-warnings --watch --env-file=.env src/main.ts"
   },
-  "packageManager": "pnpm@10.8.1",
-  "engineStrict": true,
   "devDependencies": {
     "@types/node": "^22.13.10"
   },
